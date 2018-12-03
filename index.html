@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-free-5.5.0-web/css/all.min.css">
+    <link rel="stylesheet" href="assets/style/main.css">
+</head>
+<body>
+<div class="container">
+    <div class="left-wrap">
+
+        <!--_______________header_____-->
+
+        <header class="header"><a class="header__min-logo" href="#"><img src="assets/images/min-logo.png"
+                                                                         alt="logo"></a><a
+                class="header__logo" href="#"><img src="assets/images/logo.png" alt="logo"></a><i
+                class="header__icon-menu fas fa-bars"></i></header>
+
+        <!--_______________menu_____-->
+
+        <nav class="menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="#" class="menu__link menu__link_color_white"><i
+                        class="menu__icon fas fa-home"></i>Первая
+                    ссылка</a></li>
+                <li class="menu__item"><a href="#" class="menu__link menu__link_active"><i
+                        class="menu__icon fas fa-dollar-sign"></i>Вторая
+                    ссылка (активная)</a></li>
+                <li class="menu__item"><a href="#" class="menu__link menu__link_color_white"><i
+                        class="menu__icon fas fa-snowflake"></i>Третья
+                    ссылка</a></li>
+                <li class="menu__item"><a href="#" class="menu__link menu__link_color_grey"><i
+                        class="menu__icon fas fa-user-astronaut"></i>Личный
+                    кабинет</a></li>
+                <li class="menu__item"><a href="#" class="menu__link menu__link_color_grey"><i
+                        class="menu__icon fas fa-sign-out-alt"></i>Выйти</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="right-wrap">
+
+        <!--_______________блок: заголовок страницы_____-->
+
+        <div class="caption">
+            <h2 class="caption__title">Заголовок страницы</h2>
+            <p class="caption__text">В&nbsp;отличие от&nbsp;пылевого и&nbsp;ионного хвостов, направление поступает
+                в&nbsp;лимногляциальный часовой&nbsp;угол</p>
+        </div>
+
+        <!--_______________блок: payment_____-->
+
+        <div class="payment">
+            <p class="payment__info">Информация по оплате:</p>
+            <div class="payment__spec">
+                <p class="payment__key">Номер счета:</p>
+                <p class="payment__value">87123658716587</p>
+            </div>
+            <div class="payment__spec">
+                <p class="payment__key">Сумма платежа:</p>
+                <p class="payment__value">100 руб.</p>
+            </div>
+            <h4 class="payment__title">Данные банковской карты</h4>
+
+            <!--_______________форма_____-->
+
+            <form action="#" id="form-card">
+                <div class="payment__card">
+                    <div class="card__front">
+                        <p class="card__label-number">Номер карты</p>
+                        <div class="card__wrap-number">
+                            <input type="text" class="card__field-number"
+                                   data-validate="required, digit, length"
+                                   data-len="4" name="number" data-start="0" size="4" autocomplete="off">
+                            <input type="text" class="card__field-number"
+                                   data-validate="required, digit, length"
+                                   data-len="4" name="number" data-start="4" size="4" autocomplete="off">
+                            <input type="text" class="card__field-number"
+                                   data-validate="required, digit, length"
+                                   data-len="4" name="number" data-start="8" size="4" autocomplete="off">
+                            <input type="text" class="card__field-number"
+                                   data-validate="required, digit, length"
+                                   data-len="4" name="number" data-start="12" size="4" autocomplete="off">
+                        </div>
+                        <p class="card__label-term">Срок действия</p>
+
+                        <div class="card__wrap-month">
+
+                            <i class="card__arrow fas fa-angle-down"></i>
+                            <input type="text" name="month" class="card__field-month field-drop-down"
+                                   data-validate="required, digit, range" maxlength="2" autocomplete="off">
+                            <ul class="field-month__list field__list">
+                                <li class="field__item" data-value="01">01</li>
+                                <li class="field__item" data-value="02">02</li>
+                                <li class="field__item" data-value="03">03</li>
+                                <li class="field__item" data-value="04">04</li>
+                                <li class="field__item" data-value="05">05</li>
+                                <li class="field__item" data-value="06">06</li>
+                                <li class="field__item" data-value="07">07</li>
+                                <li class="field__item" data-value="08">08</li>
+                                <li class="field__item" data-value="09">09</li>
+                                <li class="field__item" data-value="10">10</li>
+                                <li class="field__item" data-value="11">11</li>
+                                <li class="field__item" data-value="12">12</li>
+                            </ul>
+                        </div>
+
+                        <div class="card__wrap-year">
+
+                            <i class="card__arrow fas fa-angle-down"></i>
+                            <input type="text" name="year" class="card__field-year field-drop-down"
+                                   data-validate="required, digit, range" maxlength="4" autocomplete="off">
+                            <ul class="field-year__list field__list">
+                                <li class="field__item" data-value="2018">2018</li>
+                                <li class="field__item" data-value="2019">2019</li>
+                                <li class="field__item" data-value="2020">2020</li>
+                                <li class="field__item" data-value="2021">2021</li>
+                                <li class="field__item" data-value="2022">2022</li>
+                                <li class="field__item" data-value="2023">2023</li>
+                                <li class="field__item" data-value="2024">2024</li>
+                                <li class="field__item" data-value="2025">2025</li>
+                            </ul>
+
+                        </div>
+                        <input type="text" class="card__field-user" placeholder="Держатель карты"
+                               data-validate="required, latin, min-length" data-min-length="4" name="user">
+                    </div>
+
+                    <div class="card__back">
+                        <div class="card__grey-strip"></div>
+
+                        <div class="card__wrap">
+                            <label for="card-code" class="card__label-code">Код CVV2 / CVC2</label>
+                            <div class="card__wrap-code">
+                                <input type="text" id="card-code" class="card__field-code" name="cvv"
+                                       data-validate="required, digit, length"
+                                       data-len="3" maxlength="3" autocomplete="off">
+                                <i class="field-code__hint far fa-question-circle"
+                                   title="Код CVV2 можно найти на обратной стороне карты VISA, это последние 3 цифры из семизначного числа"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <button class="payment__btn">Оплатить</button>
+            </form>
+        </div>
+
+        <!--_______________footer_____-->
+
+        <footer class="footer">
+            <p class="footer__text">Исходя из&nbsp;астатической системы координат Булгакова, соединение стабильно.
+                Краевая часть артезианского бассейна, которая в&nbsp;настоящее время находится ниже уровня моря,
+                ослабляет
+                систематический
+                уход. Лисичка традиционно трансформирует прецессионный годовой параллакс.</p>
+            <p class="footer__text">Выклинивание абсолютно аккумулирует твердый pадиотелескоп Максвелла.</p>
+            <p class="footer__text">Алмаз слагает горст. Делювий длительно колеблет лазерный подвижный объект.</p>
+            <p class="footer__text">Устойчивость, например, параллельна. Аргумент перигелия определяет боксит. Проекция
+                вертикально дает уходящий диабаз. Если пренебречь малыми величинами, то&nbsp;видно, что угол крена
+                покрывает
+                вибрирующий волчок, что обусловлено не&nbsp;только первичными неровностями эрозионно-тектонического
+                рельефа
+                поверхности кристаллических пород, но&nbsp;и&nbsp;проявлениями долее поздней блоковой тектоники.
+                Засветка неба
+                заставляет иначе взглянуть на&nbsp;то, что такое волчок.</p>
+        </footer>
+    </div>
+</div>
+<script src="assets/main.js"></script>
+</body>
+</html>

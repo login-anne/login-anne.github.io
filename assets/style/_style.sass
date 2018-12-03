@@ -1,0 +1,403 @@
+=background-gradient($params)
+  background-image: -webkit-linear-gradient($params)
+  background-image: -ms-linear-gradient($params)
+  background-image: linear-gradient($params)
+
+%flex
+  display: -ms-flex
+  display: flex
+
+=flex-direction($value)
+  -ms-flex-direction: $value
+  flex-direction: $value
+
+%active
+  &:active
+    position: relative
+    top: 1px
+
+html,
+body
+  height: 100%
+
+body
+  background-color: #101114
+
+.container
+  @extend %flex
+  min-height: 100%
+  width: 957px
+  margin: 0 auto
+  position: relative
+
+.left-wrap
+  float: left
+  width: 33.2%
+
+.right-wrap
+  width: 66.8%
+  @extend %flex
+  +flex-direction(column)
+
+//_______________header
+
+.header
+  height: 162px
+  background-color: #1f2229
+  box-sizing: border-box
+  padding: 0 29px
+
+  &__logo
+    float: left
+    display: block
+    width: 185px
+    height: 36px
+    margin-top: 64px
+    transition: box-shadow .6s ease-out
+    @extend %active
+    &:hover
+      box-shadow: inset 0 0 15px 25px rgba(0, 174, 239, 0.45), 0 0 5px 2px rgba(0, 0, 0, 0.5)
+
+
+  &__min-logo
+    float: left
+    margin-top: 64px
+    display: none
+    margin-left: -15px
+
+  &__icon-menu
+    display: none
+    color: #fff
+    float: right
+    height: 36px
+    margin-top: 64px
+    padding: 5px
+    font-size: 28px
+    transition: color .3s
+    box-sizing: border-box
+    @extend %active
+    &:hover
+      color: #00aeef
+
+// _______________menu
+
+.menu
+  width: 318px
+  float: left
+
+  &__item
+    height: 75px
+
+  &__link
+    display: block
+    font-family: "open_sansbold", sans-serif
+    font-size: 18px
+    line-height: 75px
+    padding-left: 29px
+    border-top: 1px solid #22252d
+    transition: box-shadow .4s
+    @extend %active
+    &_active
+      color: #808592
+      background-color: #2a2d37
+    &_color
+      &_white
+        color: #ffffff
+        background-color: #1f2229
+      &_grey
+        color: #808592
+        background-color: #191c24
+    &:hover
+      box-shadow: inset 0 0 5px 2px rgba(0, 0, 0, 0.50)
+
+  &__icon
+    display: none
+
+// _______________caption
+
+.caption
+  height: auto
+  background-color: #00aeef
+  float: left
+  padding: 46px 27.85% 28px 4.2%
+  box-sizing: border-box
+  position: relative
+  z-index: 2
+
+  &__title
+    color: #193945
+    font-family: "open_sansbold", sans-serif
+    font-size: 35px
+    font-weight: 700
+
+  &__text
+    color: #193945
+    font-family: "Arial MT", Arial, sans-serif
+    font-size: 14px
+    font-weight: 400
+    line-height: 20px
+    margin-top: 10px
+
+
+%grey-text
+  height: 16px
+  color: #8494ab
+  font-family: "Arial MT", Arial, sans-serif
+  font-size: 16px
+  font-weight: 400
+
+// _______________payment
+
+.payment
+  flex-grow: 1
+  min-height: 569px
+  background-color: #f7f8f8
+  float: left
+  padding: 47px 46px 50px 4.2%
+  box-sizing: border-box
+  position: relative
+  z-index: 2
+
+  &__info
+    @extend %grey-text
+    margin-bottom: 23px
+
+  &__spec
+    margin-bottom: 11px
+
+  &__key
+    float: left
+    @extend %grey-text
+
+  &__value
+    margin-left: 159px
+    font-family: "Arial MT", Arial, sans-serif
+    font-size: 16px
+    font-weight: 400
+    color: #373c43
+
+  &__title
+    margin-top: 28px
+    color: #383d43
+    font-family: "open_sansbold", sans-serif
+    font-size: 22px
+    font-weight: 700
+
+  &__card
+    position: relative
+    margin-top: 22px
+    height: 256px
+
+// _______________форма
+
+%card
+  height: 236px
+  border: 1px solid #e4e9ee
+  background-color: #f7f8f8
+  position: absolute
+  border-radius: 8px
+  box-sizing: border-box
+
+%input
+  box-sizing: border-box
+  border: 1px solid #e4e9ee
+  transition: box-shadow .3s
+  box-shadow: 0 0 0 0 rgba(0, 174, 239, 0.40)
+  padding:
+    right: 6px
+    left: 6px
+
+  &:focus
+    outline: none
+    box-shadow: inset 0 0 1px 1px rgba(0, 174, 239, 0.40)
+
+%inputWithList
+  padding-right: 35px
+  text-align: center
+
+.card
+  &__front
+    @extend %card
+    left: 0
+    width: 350px
+    z-index: 2
+    padding:
+      top: 25px
+      right: 15px
+      left: 15px
+
+  &__back
+    right: 0
+    @extend %card
+    top: 20px
+    width: 370px
+
+  &__label-number
+    @extend %grey-text
+    margin-bottom: 5px
+
+  &__field-number
+    @extend %input
+    width: 65px
+    height: 42px
+    text-align: center
+
+  &__label-term
+    @extend %grey-text
+    margin:
+      top: 17px
+      bottom: 5px
+
+  &__field-month
+    @extend %input
+    width: 70px
+    height: 42px
+
+  &__field-year
+    @extend %input
+    width: 86px
+    height: 42px
+
+  &__field-month
+    @extend %inputWithList
+
+  &__field-year
+    @extend %inputWithList
+
+  &__wrap-year
+    position: relative
+    float: left
+    margin-left: 9px
+    width: 86px
+    height: 42px
+
+  &__arrow
+    box-sizing: border-box
+    height: 42px
+    width: 32px
+    font-size: 20px
+    top: 0
+    position: absolute
+    right: 0
+    color: #c9d0d7
+    text-align: center
+    transition: color .3s
+    &:hover
+      color: #d4dbe2
+    &:before
+      line-height: 42px
+
+
+  &__wrap-month
+    position: relative
+    float: left
+    width: 70px
+    height: 42px
+
+  &__field-user
+    @extend %input
+    margin-top: 12px
+    max-width: 319px
+    width: 100%
+    height: 42px
+
+  &__grey-strip
+    margin-top: 26px
+    width: 100%
+    height: 42px
+    background-color: #e4e9ee
+
+  &__wrap
+    float: right
+    margin-right: 15px
+
+  &__label-code
+    @extend %grey-text
+    margin-top: 19px
+    display: block
+
+  &__wrap-code
+    position: relative
+    margin-top: 4px
+
+  &__field-code
+    @extend %input
+    text-align: center
+    padding-right: 44px
+    width: 138px
+    height: 42px
+
+.field
+  &-code__hint
+    position: absolute
+    height: 42px
+    width: 30px
+    right: 0
+    top: 0
+    margin-right: 5px
+    color: #d0d5dc
+    font-size: 26px
+    transition: color .3s
+    &:hover
+      color: #d8dde4
+    &:before
+      line-height: 42px
+
+  &__list
+    text-align: center
+    background-color: #fff
+    border: 1px solid #e4e9ee
+    max-height: 0
+    transition: max-height .6s
+    border-top: none
+    border-bottom: none
+    margin-bottom: -150px
+    overflow: auto
+
+  &__item
+    padding: 5px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03)
+
+    &:hover
+      background-color: rgba(0, 0, 0, 0.03)
+
+
+.payment
+  &__btn
+    transition: background 2s
+    width: 173px
+    height: 40px
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02)
+    +background-gradient((#a1c600, #88b700))
+    background-size: 230% 100%
+    background-position: 0 0
+    border: 1px solid #87b700
+    border-radius: 4px
+    margin-top: 15px
+    color: #ffffff
+    font-family: "open_sansbold", sans-serif
+    font-size: 14px
+    @extend %active
+    &:hover
+      +background-gradient((#9dc000, #80b000))
+      border-color: #80b000
+
+    &:focus
+      outline: none
+
+// _______________footer
+
+.footer
+  height: 263px
+  background-color: #373c43
+  clear: both
+  padding: 10px 45px 33px 4.2%
+  box-sizing: border-box
+
+  &__text
+    color: #89909d
+    font-family: "Arial MT", Arial, sans-serif
+    font-size: 12px
+    font-weight: 400
+    line-height: 17px
+    margin-top: 12px

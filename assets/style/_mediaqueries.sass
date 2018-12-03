@@ -1,0 +1,148 @@
+=padding-left($value)
+ .caption,
+ .payment,
+ .footer
+   padding-left: $value
+
+=padding-right($value)
+  .caption,
+  .payment,
+  .footer
+    padding-right: $value
+
+@media screen and (max-width: 1000px)
+  +padding-left(8%)
+
+  .container
+    max-width: 100%
+  .right-wrap
+    width: 100%
+
+  .caption
+    height: auto
+  .payment
+    height: auto
+  .footer
+    height: auto
+
+
+@media screen and (max-width: 1000px) and (min-width: 769px)
+  .container
+    min-width: 740px
+
+  .header
+    &__logo
+      display: none
+    &__min-logo
+      display: block
+
+  .left-wrap
+    width: 75px
+    min-height: 100%
+    transition: width .8s
+    overflow: hidden
+    background-color: #1f2229
+    position: absolute
+    z-index: 5
+    &:hover
+      width: 355px
+
+  .right-wrap
+    margin-left: 75px
+
+  .header
+    width: 355px
+  .menu
+    width: 355px
+    &__link
+      padding-left: 76px
+      position: relative
+
+    &__icon
+      position: absolute
+      display: block
+      font-size: 22px
+      left: 0
+      height: 75px
+      width: 75px
+      text-align: center
+      &:before
+        line-height: 75px
+
+@media screen and (max-width: 768px)
+  .container
+    +flex-direction(column)
+  .left-wrap
+    width: 100%
+  .right-wrap
+    width: 100%
+  .menu
+    transition: max-height .6s
+    max-height: 0
+    text-align: center
+    width: 100%
+    &__item
+      height: 50px
+    &__link
+      padding: 0
+      line-height: 50px
+      border-top: 1px solid #272a33
+    //.header
+  .header
+    &__icon-menu
+      display: block
+
+@media screen and (max-width: 768px) and (min-width: 481px)
+  +padding-left(6%)
+  .header
+    padding-left: 6%
+  .container
+    min-width: 480px
+
+@media screen and (max-width: 630px) and (min-width: 481px)
+  .card__back
+    top: 250px
+
+  .payment__card
+    height: 486px
+@media screen and (max-width: 480px)
+  .container
+    min-width: 304px
+  .payment__card
+    height: 496px
+  %card
+    width: 100%
+  .card__back
+    top: 260px
+
+@media screen and (max-width: 405px)
+  +padding-left(4%)
+  +padding-right(5%)
+  .header
+    padding-left: 4%
+
+  .payment__card
+    height: 330px
+  .card
+    &__front
+      padding:
+        top:  25px
+        right: 0
+        bottom:  0
+        left: 0
+      border: none
+    &__back
+      border: none
+      height: auto
+      top: 230px
+    &__field-cvv
+      margin-bottom: 20px
+    &__grey-strip
+      display: none
+    &__wrap
+      float: left
+
+// классы для js
+
+.show-menu
+  max-height: 300px
